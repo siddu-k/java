@@ -12,7 +12,9 @@ public class App {
         try (Scanner sc = new Scanner(System.in)) {
             int opt = sc.nextInt();
             new OptSel().selectOption(opt, sc);
-        }
+        } catch (Exception e) {
+    System.out.println("An error occurred: " + e.getMessage());
+}
     }
 }
 
