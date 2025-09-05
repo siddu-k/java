@@ -1,28 +1,36 @@
 public class Operations {
-    
-Display D = new Display();
-static int ans;
+    Display D = new Display();
 
-void add(int[] nums){
-
-    for(int num :nums){
-    ans+=num;
+    void add(int[] nums) {
+        int ans = 0;
+        for (int num : nums) {
+            ans += num;
+        }
+        D.display(ans, nums);
     }
-    D.Display(ans,nums);
-}
 
-void sub(int[] nums){
-for(int num :nums){
-    ans-=num;
+    void sub(int[] nums) {
+        if (nums.length == 0) {
+            D.display(0, nums);
+            return;
+        }
+        int ans = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            ans -= nums[i];
+        }
+        D.display(ans, nums);
     }
-    D.Display(ans,nums);
-}
 
-void mul(int[] nums){
-   for(int num :nums){
-    ans*=num;
+    void mul(int[] nums) {
+        if (nums.length == 0) {
+            D.display(0, nums);
+            return;
+        }
+        int ans = 1;
+        for (int num : nums) {
+            ans *= num;
+        }
+        D.display(ans, nums);
     }
-    D.Display(ans,nums);
-}
 }
 

@@ -9,11 +9,10 @@ public class App {
         System.out.println("2)SUB");
         System.out.println("3)MUL");
 
-        Scanner sc = new Scanner(System.in);
-        int opt = sc.nextInt();
-
-        new OptSel().OptSel(opt);
-
+        try (Scanner sc = new Scanner(System.in)) {
+            int opt = sc.nextInt();
+            new OptSel().selectOption(opt, sc);
+        }
     }
 }
 
